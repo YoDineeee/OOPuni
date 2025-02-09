@@ -1,4 +1,4 @@
 trait Dineable {
-  serveDinner(carId: String);
+  def dine(carId: String): Unit
 
 }

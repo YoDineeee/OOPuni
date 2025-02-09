@@ -1,4 +1,4 @@
 trait Refuelable {
-   refuel(carId: String)
+   def refuel(carId: String): Unit
 
 }

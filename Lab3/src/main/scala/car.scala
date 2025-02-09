@@ -1,15 +1,9 @@
 
 
-case class car(
-                id: Int,
-                `type`: String,
-                passengers: String,
-                isDining: Boolean,
-                consumption: Int
-              )
-
-// Define an implicit Ordering for car
-object car {
-  implicit val carOrdering: Ordering[car] = Ordering.by(_.id)
- 
-}
+class Car(
+           val id: String,
+           val carType: String, // "ELECTRIC" or "GAS"
+           val passengers: String, // "PEOPLE" or "ROBOTS"
+           val isDining: Boolean,
+           val consumption: Int
+         )
