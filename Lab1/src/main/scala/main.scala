@@ -1,13 +1,33 @@
+import java.nio.file.{Files, Paths}
+import java.io.IOException
+
 object main {
   def main(args: Array[String]): Unit = {
-    val display1 = new Display(1920, 1080, 300f, "Monitor A")
-    val display2 = new Display(2560, 1440, 350f, "Monitor B")
-    val display3 = new Display(1280, 720, 200f, "Monitor C")
+    if (args.isEmpty) {
+      println("Please provide the file path as a command-line argument.")
+      return
+    }
 
-    display1.compareWithMonitor(display2)
-    println()
-    display2.compareWithMonitor(display3)
-    println()
-    display1.compareWithMonitor(display3)
+    args.foreach { filePath =>
+      try {
+        val fileContent = FileReader.readFileIntoString(filePath)
+        println(s"Processing file: $filePath")
+
+        val textData = new TextData(filePath, fileContent)
+
+        println(s"File Name: ${textData.getFileName}")
+        println(s"Text: ${textData.getText}")
+        println()
+        println(s"Number of Vowels: ${textData.getNumberOfVowels}")
+        println(s"Number of Consonants: ${textData.getNumberOfConsonants}")
+        println(s"Number of Letters: ${textData.getNumberOfLetters}")
+        println(s"Number of Sentences: ${textData.getNumberOfSentences}")
+        println(s"Longest Word: ${textData.getLongestWord}")
+
+      } catch {
+        case e: IOException =>
+          println(s"An error occurred while reading the file: ${e.getMessage}")
+      }
+    }
   }
 }
