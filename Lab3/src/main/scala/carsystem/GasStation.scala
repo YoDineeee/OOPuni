@@ -1,0 +1,5 @@
+package carsystem
+
+class GasStation {
+
+}

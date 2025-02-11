@@ -1,0 +1,5 @@
+package carsystem
+
+trait Queue {
+
+}
