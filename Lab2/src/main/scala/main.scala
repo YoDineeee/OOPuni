@@ -1,37 +1,73 @@
-enum Intensity:
-  case LIGHT, NORMAL, STRONG
+sealed trait Intensity
+case object Light extends Intensity
+case object Normal extends Intensity
+case object Strong extends Intensity
 
-enum SyrupType:
-  case MACADAMIA, VANILLA, COCONUT, CARAMEL, CHOCOLATE, POPCORN
+sealed trait SyrupType
+case object Vanilla extends SyrupType
+case object Caramel extends SyrupType
+case object Chocolate extends SyrupType
 
-class Coffee(protected val coffeeIntensity: Intensity):
+open class Coffee(protected val coffeeIntensity: Intensity) {
   protected val name: String = "Coffee"
+  protected val coffeeName: String = "Coffee"
+
   def getCoffeeIntensity: Intensity = coffeeIntensity
-  def getName: String = name
 
-class Americano(intensity: Intensity, private val mlOfWater: Int) extends Coffee(intensity):
-  private val coffeeName: String = "Americano"
+  def getName: String = coffeeName
+
+  def printCoffeeDetails(): Unit = {
+    println(s"$coffeeName intensity: $coffeeIntensity")
+  }
+}
+
+class Americano(coffeeIntensity: Intensity, private val mlOfWater: Int) extends Coffee(coffeeIntensity) {
+  override val coffeeName: String = "Americano"
+
   def getMlOfWater: Int = mlOfWater
-  def getCoffeeName: String = coffeeName
 
-class Cappuccino(intensity: Intensity, mlOfWater: Int, private val mlOfMilk: Int) extends Americano(intensity, mlOfWater):
-  private val coffee: String = "Cappuccino"
+  override def printCoffeeDetails(): Unit = {
+    println(s"$coffeeName water: $mlOfWater ml")
+  }
+}
+
+class Cappuccino(intensity: Intensity, mlOfWater: Int, private val mlOfMilk: Int) extends Americano(intensity, mlOfWater) {
+  override val coffeeName: String = "Cappuccino"
+
   def getMlOfMilk: Int = mlOfMilk
-  def getCoffee: String = coffee
+
+  override def printCoffeeDetails(): Unit = {
+    println(s"$coffeeName water: $getMlOfWater ml, milk: $mlOfMilk mg")
+  }
+}
 
 class SyrupCappuccino(intensity: Intensity, mlOfWater: Int, mlOfMilk: Int, private val syrup: SyrupType)
-  extends Cappuccino(intensity, mlOfWater, mlOfMilk):
-  private val coffee: String = "SyrupCappuccino"
-  override def getCoffee: String = coffee
+  extends Cappuccino(intensity, mlOfWater, mlOfMilk) {
+
+  override val coffeeName: String = "SyrupCappuccino"
+
   def getSyrup: SyrupType = syrup
 
-class PumpkinSpiceLatte(
-                         intensity: Intensity,
-                         mlOfWater: Int,
-                         mlOfMilk: Int,
-                         syrup: SyrupType,
-                         private val mgOfPumpkinSpice: Int
-                       ) extends SyrupCappuccino(intensity, mlOfWater, mlOfMilk, syrup):
-  private val name: String = "PumpkinSpiceLatte"
-  override def getName: String = name
+  override def printCoffeeDetails(): Unit = {
+    println(s"$coffeeName water: $getMlOfWater ml, milk: $getMlOfMilk mg, syrup: $syrup")
+  }
+}
+
+class PumpkinSpiceLatte(intensity: Intensity, mlOfWater: Int, mlOfMilk: Int, syrup: SyrupType, private val mgOfPumpkinSpice: Int)
+  extends SyrupCappuccino(intensity, mlOfWater, mlOfMilk, syrup) {
+
+  override val coffeeName: String = "PumpkinSpiceLatte"
+
   def getMgOfPumpkinSpice: Int = mgOfPumpkinSpice
+
+  override def printCoffeeDetails(): Unit = {
+    println(s"$coffeeName water: $getMlOfWater ml, milk: $getMlOfMilk mg, syrup: $getSyrup, pumpkin spice: $mgOfPumpkinSpice mg")
+  }
+}
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    val coffee = new PumpkinSpiceLatte(Normal, 50, 20, Chocolate, 3)
+    coffee.printCoffeeDetails()
+  }
+}
