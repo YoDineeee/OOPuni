@@ -1,0 +1,90 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.10.6 (Oracle Corporation Java 23)
+[debug] Load.defaultLoad until apply took 80.740164ms
+[debug]           Load.loadUnit: plugins took 47.98588ms
+[debug]           Load.loadUnit: defsScala took 0.257377ms
+[debug] [Loading] Scanning directory /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 13.320589 ms
+[debug]               Load.resolveProject(lab3-build) took 33.191514ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id lab3-build, base: /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/project, plugins: List(<none>))) took 62.407349ms
+[debug] [Loading] Done in /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/project, returning: (lab3-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 81.724884ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.203571ms
+[debug]         Load.loadUnit(file:/home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/project/, ...) took 134.622949ms
+[debug]       Load.apply: load took 281.357484ms
+[debug]       Load.apply: resolveProjects took 5.235765ms
+[debug]       Load.apply: finalTransforms took 47.822738ms
+[debug]       Load.apply: config.delegates took 4.855621ms
+[debug]       Load.apply: Def.make(settings)... took 500.245461ms
+[debug]       Load.apply: structureIndex took 82.224422ms
+[debug]       Load.apply: mkStreams took 1.183786ms
+[info] loading project definition from /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 2455.940407ms
+[debug]     Load.loadUnit: defsScala took 0.004541ms
+[debug] [Loading] Scanning directory /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3
+[debug]       Load.loadUnit: mkEval took 3.941659ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.458344 ms
+[info] loading settings for project root from build.sbt...
+[debug]         Load.resolveProject(root) took 7.325105ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3, plugins: List(<none>))) took 9.650787ms
+[debug] [Loading] Done in /home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1767.770172ms
+[debug]     Load.loadUnit: cleanEvalClasses took 2.628143ms
+[debug]   Load.loadUnit(file:/home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/, ...) took 4227.406109ms
+[debug] Load.apply: load took 4240.17188ms
+[debug] Load.apply: resolveProjects took 0.090131ms
+[debug] Load.apply: finalTransforms took 12.19766ms
+[debug] Load.apply: config.delegates took 0.293167ms
+[debug] Load.apply: Def.make(settings)... took 96.011303ms
+[debug] Load.apply: structureIndex took 34.543399ms
+[debug] Load.apply: mkStreams took 0.003054ms
+[info] set current project to Lab3 (in build file:/home/mrdine/University/2nd/semester1/OOP/OOPuni/Lab3/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:///home/mrdine/.sbt/1.0/server/35864965e40eebe94035/sock
+[debug] Writing bsp connection file
+[info] started sbt server
+[debug] Forcing garbage collection...
+[info] shutting down sbt server

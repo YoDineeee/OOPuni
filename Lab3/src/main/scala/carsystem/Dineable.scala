@@ -1,5 +1,6 @@
 package carsystem
 
-trait Dineable {
 
+trait Dineable {
+  def serveDinner(id: String): Unit
 }
